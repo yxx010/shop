@@ -25,12 +25,13 @@
                     <p class="lead">欢迎使用油画商城自动化管理系统</p>
                 </div>
                 <div class="panel mt30 mb25">
-                    <form method="post" action="sort_list.html" id="contact">
+                    <form method="post" action="${pageContext.request.contextPath }/UserServlet" id="contact">
+                        <input type="hidden" name="method" value="login">
                         <div class="panel-body bg-light p25 pb15">
                             <div class="section">
                                 <label for="sn" class="field-label text-muted fs18 mb10">名称</label>
                                 <label for="sn" class="field prepend-icon">
-                                    <input type="text" name="sn" id="sn" class="gui-input" placeholder="请输入名称...">
+                                    <input type="text" name="username" id="username" class="gui-input" placeholder="请输入名称...">
                                     <label for="sn" class="field-icon">
                                         <i class="fa fa-user"></i>
                                     </label>
@@ -45,7 +46,7 @@
                                     </label>
                                 </label>
                             </div>
-                        </div> 
+                        </div>
                         <div class="panel-footer clearfix text-center">
 							<button type="submit" class="button btn-primary mr10"> 登陆 </button>
                         </div>
