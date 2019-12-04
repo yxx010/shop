@@ -1,5 +1,9 @@
 package com.imooc.web.action;
 
+import com.imooc.domain.User;
+import com.imooc.service.UserService;
+import com.imooc.service.impl.UserServiceImpl;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -27,5 +31,18 @@ public class UserServlet extends HttpServlet {
         String username=request.getParameter("username");
         String password=request.getParameter("password");
         System.out.println(username+" "+password);
+        try {
+            response.getWriter().println(username+password);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        //数据封装
+        User user=new User();
+        user.setName(username);
+        user.setPassword(password);
+        //处理数据
+        UserService userService=new UserServiceImpl();
+        User exitUser=userService.login(user);
     }
+
 }

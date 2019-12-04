@@ -1,4 +1,6 @@
 package com.imooc.dao.impl;
 
-public class ProductDaoImpl {
+import com.imooc.dao.ProductDao;
+
+public class ProductDaoImpl implements ProductDao {
 }

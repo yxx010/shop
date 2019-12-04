@@ -1,4 +1,7 @@
 package com.imooc.dao;
 
-public class UserDao {
+import com.imooc.domain.User;
+
+public interface UserDao {
+    public User login(User user);
 }

@@ -1,4 +1,6 @@
 package com.imooc.dao.impl;
 
-public class CategoryDaoImpl {
+import com.imooc.dao.CategoryDao;
+
+public class CategoryDaoImpl implements CategoryDao {
 }

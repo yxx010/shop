@@ -1,4 +1,4 @@
 package com.imooc.service;
 
-public class ProductService {
+public interface ProductService {
 }

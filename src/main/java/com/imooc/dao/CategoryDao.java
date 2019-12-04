@@ -1,4 +1,4 @@
 package com.imooc.dao;
 
-public class CategoryDao {
+public interface CategoryDao {
 }

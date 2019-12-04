@@ -1,4 +1,7 @@
 package com.imooc.service;
 
-public class UserService {
+import com.imooc.domain.User;
+
+public interface UserService {
+    public User login(User user);
 }
