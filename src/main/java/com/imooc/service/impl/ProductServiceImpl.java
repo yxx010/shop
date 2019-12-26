@@ -1,4 +1,6 @@
 package com.imooc.service.impl;
 
-public class ProductServiceImpl {
+import com.imooc.service.ProductService;
+
+public class ProductServiceImpl implements ProductService {
 }

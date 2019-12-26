@@ -5,5 +5,7 @@
     <property name="jdbcUrl">jdbc:mysql:///shop</property>
     <property name="user">root</property>
     <property name="password">12345678</property>
+    <property name="initalPoolSize">5</property>
+    <property name="maxPoolSize">20</property>
   </default-config>
 </c3p0-config>

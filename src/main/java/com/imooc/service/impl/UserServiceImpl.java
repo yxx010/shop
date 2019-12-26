@@ -9,7 +9,6 @@ public class UserServiceImpl implements UserService {
 
     public User login(User user) {
         UserDao userDao=new UserDaoImpl();
-        userDao.login(user);
-        return null;
+        return userDao.login(user);
     }
 }
