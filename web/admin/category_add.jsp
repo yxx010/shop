@@ -19,9 +19,9 @@
 <body class="admin-validation-page" data-spy="scroll" data-target="#nav-spy" data-offset="200">
 <div id="main">
  <%@ include file="header.jsp" %>
- 
+
  <%@ include file="left.jsp" %>
- 
+
     <section id="content_wrapper">
 <section id="content" class="table-layout animated fadeIn">
     <div class="tray tray-center">
@@ -31,13 +31,14 @@
         </div>
         <div class="admin-form theme-primary mw1000 center-block" style="padding-bottom: 175px;">
             <div class="panel heading-border">
-                <form id="admin-form" name="addForm" action="/department/add" method="post">
+                <form id="admin-form" name="addForm" action="${pageContext.request.contextPath}/CategoryServlet" method="post">
+                    <input type="hidden" name="method" value="save">
                     <div class="panel-body bg-light">
                         <div class="section-divider mt20 mb40">
                             <span> 基本信息 </span>
                         </div>
                         <div class="section row">
-                           
+
                         <div class="section row">
 							<div class="col-md-2"></div>
 							<div class="col-md-1">
@@ -49,11 +50,11 @@
                             </div>
                             <div class="col-md-6">
                                 <label for="sn" class="field">
-                                    <input id="sn" name="sn" class="gui-input" placeholder="名称" type="text" value="imooc"/>
+                                    <input id="cname" name="cname" class="gui-input" placeholder="名称" type="text" value="imooc"/>
                                 </label>
                             </div>
                         </div>
-						
+
                         <div class="section row">
 							<div class="col-md-2"></div>
 							<div class="col-md-1">
@@ -65,7 +66,7 @@
                             </div>
 							<div class="col-md-6">
 								<label for="address" class="field">
-									<input id="address" name="address" class="gui-input" placeholder="描述" type="text" value=""/>
+									<input id="cdesc" name="cdesc" class="gui-input" placeholder="描述" type="text" value=""/>
 								</label>
 							</div>
                         </div>

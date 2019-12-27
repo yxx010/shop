@@ -44,9 +44,9 @@ public class UserServlet extends HttpServlet {
         user.setPassword(password);
         //处理数据
         UserService userService=new UserServiceImpl();
-        User exitUser=userService.login(user);
+        User existUser=userService.login(user);
         //根据处理结果，完成页面跳转
-        if(exitUser==null){
+        if(existUser==null){
             //登录失败
             //返回到登录页面
             request.setAttribute("msg","用户名或密码错误！");
@@ -54,8 +54,9 @@ public class UserServlet extends HttpServlet {
         }else{
             //登录成功
             //将用户的信息进行保存，并进行页面跳转
-            request.getSession().setAttribute("exitUser",exitUser);
-            response.sendRedirect(request.getContextPath()+"/admin/category_list.jsp");
+
+            request.getSession().setAttribute("existUser",existUser);
+            response.sendRedirect(request.getContextPath()+"/CategoryServlet?method=findAll");
         }
     }
 

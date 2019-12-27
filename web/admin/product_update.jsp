@@ -19,9 +19,9 @@
 <body class="admin-validation-page" data-spy="scroll" data-target="#nav-spy" data-offset="200">
 <div id="main">
     <%@ include file="header.jsp" %>
-    
+
      <%@ include file="left.jsp" %>
-    
+
     <section id="content_wrapper">
 <section id="content" class="table-layout animated fadeIn">
     <div class="tray tray-center">
@@ -63,7 +63,7 @@
                             <div class="col-md-6">
                                 <label for="sn" class="field">
                                     <input id="sn" name="sn" class="gui-input" placeholder="1000" type="text" value="1000"/>
-                                    
+
                                 </label>
                             </div>
                         </div>
@@ -97,7 +97,7 @@
                                     <input id="name" name="name" class="gui-input" placeholder="价格" type="file" value="上传图片"/>
                                 </label>
                             </div>
-                        </div>						
+                        </div>
 						<div class="section row">
 							<div class="col-md-2"></div>
 							<div class="col-md-1">
