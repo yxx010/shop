@@ -23,9 +23,10 @@
                 <div class="content-header">
                     <h1>油画商城</h1>
                     <p class="lead">欢迎使用油画商城自动化管理系统</p>
+                    <font color="red">${msg}</font>
                 </div>
                 <div class="panel mt30 mb25">
-                    <form method="post" action="${pageContext.request.contextPath }/UserServlet" id="contact">
+                    <form method="post" action="${pageContext.request.contextPath}/UserServlet" id="contact">
                         <input type="hidden" name="method" value="login">
                         <div class="panel-body bg-light p25 pb15">
                             <div class="section">

@@ -3,7 +3,7 @@
    <aside id="sidebar_left" class="nano nano-light affix">
         <div class="sidebar-left-content nano-content">
             <ul class="nav sidebar-menu">
-                
+
                 <li class="sidebar-label pt15">油画管理</li>
                 <li>
                     <a href="#">
@@ -13,15 +13,15 @@
                     </a>
                     <ul class="nav sub-nav">
                         <li>
-                            <a href="goods_list.html">
+                            <a href="product_list.jsp">
                                 <span class="glyphicon glyphicon-calendar"></span> 商品列表 </a>
                         </li>
                         <li>
-                            <a href="goods_add.html">
+                            <a href="product_add.jsp">
                                 <span class="glyphicon glyphicon-check"></span> 添加商品 </a>
                         </li>
 						<li>
-                            <a href="goods_update.html">
+                            <a href="product_update.jsp">
                                 <span class="glyphicon glyphicon-check"></span> 修改商品 </a>
                         </li>
                     </ul>
