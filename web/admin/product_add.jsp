@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 
@@ -31,7 +32,14 @@
         </div>
         <div class="admin-form theme-primary mw1000 center-block" style="padding-bottom: 175px;">
             <div class="panel heading-border">
-                <form id="admin-form" name="addForm" action="/employee/update" method="post">
+                <!--
+                 文件上传的要素：
+                 1. 表单提交方式为post;
+                 2. 表单项中有文件上传项，且有name和对应的值；
+                 3. 表单的enctype属性需要设置为multipart/form-data。
+                 save方法不能通过input hidden的方式传了
+                 -->
+                <form action="${pageContext.request.contextPath}/ProductServlet?method=save" method="post" enctype="multipart/form-data">
                     <div class="panel-body bg-light">
                         <div class="section-divider mt20 mb40">
                             <span> 基本信息 </span>
@@ -39,46 +47,65 @@
                         <div class="section row">
 							<div class="col-md-2"></div>
 							<div class="col-md-1">
-                                <label for="sn" class="field prepend-icon">
-                                    <label for="sn" class="field-icon">
+                                <label for="pname" class="field prepend-icon">
+                                    <label for="pname" class="field-icon">
 										名称
                                     </label>
                                 </label>
                             </div>
                             <div class="col-md-6">
-                                <label for="sn" class="field">
-                                    <input id="sn" name="sn" class="gui-input" placeholder="名称" type="text" value="imooc"/>
+                                <label for="pname" class="field">
+                                    <input id="pname" name="pname" class="gui-input" placeholder="请输入名称" type="text" value=""/>
                                 </label>
                             </div>
                         </div>
 						<div class="section row">
 							<div class="col-md-2"></div>
 							<div class="col-md-1">
-                                <label for="sn" class="field prepend-icon">
-                                    <label for="sn" class="field-icon">
+                                <label for="price" class="field prepend-icon">
+                                    <label for="price" class="field-icon">
 										价格
                                     </label>
                                 </label>
                             </div>
                             <div class="col-md-6">
-                                <label for="sn" class="field">
-                                    <input id="sn" name="sn" class="gui-input" placeholder="1000" type="text" value="1000"/>
+                                <label for="price" class="field">
+                                    <input id="price" name="price" class="gui-input" placeholder="请输入价格" type="text" value=""/>
                                     
+                                </label>
+                            </div>
+                        </div>
+                        <div class="section row">
+                            <div class="col-md-2"></div>
+                            <div class="col-md-1">
+                                <label for="author" class="field prepend-icon">
+                                    <label for="author" class="field-icon">
+                                        作者
+                                    </label>
+                                </label>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="author" class="field">
+                                    <input id="author" name="author" class="gui-input" placeholder="请输入作者名字" type="text" value=""/>
                                 </label>
                             </div>
                         </div>
                         <div class="section row">
 							<div class="col-md-2"></div>
 							<div class="col-md-1">
-                                <label for="sn" class="field prepend-icon">
-                                    <label for="sn" class="field-icon">
+                                <label for="cid" class="field prepend-icon">
+                                    <label for="cid" class="field-icon">
 										分类
                                     </label>
                                 </label>
                             </div>
                             <div class="col-md-6">
-                                <label for="sn" class="field select">
-                                    <select id="departmentSn" name="departmentSn" class="gui-input" placeholder="分类..."><option value="10001" selected="selected">分类一</option><option value="10002">财务部</option><option value="10003">事业部</option></select>
+                                <label for="cid" class="field select">
+                                    <select id="cid" name="cid" class="gui-input" placeholder="分类...">
+                                        <c:forEach  var="category" items="${categoryList}">
+                                            <option value="${category.cid}">${category.cname}</option>
+                                        </c:forEach>
+                                    </select>
                                     <i class="arrow double"></i>
                                 </label>
                             </div>
@@ -86,30 +113,30 @@
 						 <div class="section row">
 							<div class="col-md-2"></div>
 							<div class="col-md-1">
-                                <label for="sn" class="field prepend-icon">
-                                    <label for="sn" class="field-icon">
+                                <label for="filename" class="field prepend-icon">
+                                    <label for="filename" class="field-icon">
 										图片
                                     </label>
                                 </label>
                             </div>
                             <div class="col-md-6">
-                                <label for="name" class="field">
-                                    <input id="name" name="name" class="gui-input" placeholder="价格" type="file" value="上传图片"/>
+                                <label for="filename" class="field">
+                                    <input id="filename" name="filename" class="gui-input" placeholder="图片名称" type="file" value="上传图片"/>
                                 </label>
                             </div>
-                        </div>						
+                        </div>
 						<div class="section row">
 							<div class="col-md-2"></div>
 							<div class="col-md-1">
-                                <label for="sn" class="field prepend-icon">
-                                    <label for="sn" class="field-icon">
+                                <label for="description" class="field prepend-icon">
+                                    <label for="description" class="field-icon">
 										描述
                                     </label>
                                 </label>
                             </div>
 							<div class="col-md-6">
-								<label for="address" class="field">
-									<input id="address" name="address" class="gui-input" placeholder="描述" type="text" value=""/>
+								<label for="description" class="field">
+									<input id="description" name="description" class="gui-input" placeholder="请输入描述信息" type="text" value=""/>
 								</label>
 							</div>
                         </div>

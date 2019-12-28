@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 
@@ -42,7 +44,7 @@
                                     <i class="fa fa-trash"></i>
                                 </button>
                                 <button type="button" class="btn btn-default light">
-                                    <i class="fa fa-plus" onclick="javascript:window.location.href='/department/to_add';"></i>
+                                    <i class="fa fa-plus" onclick="javascript:window.location.href='/ProductServlet?method=saveUI';"></i>
                                 </button>
                             </div>
                         </div>
@@ -66,25 +68,26 @@
                             <th class="hidden-xs">名称</th>
                             <th class="hidden-xs">分类</th>
                             <th class="hidden-xs">价格</th>
-					
-							<th class="hidden-xs">描述</th>
+                            <th class="hidden-xs">作者</th>
+                            <th class="hidden-xs">描述</th>
 							<th>操作</th>
                         </tr>
                         </thead>
                         <tbody>
-                        
+                        <c:forEach var="product" items="${list}">
                             <tr class="message-unread">
-                               
-                                <td>无名女郎</td>
-                                <td>分类一</td>
-                                <td>88888</td>
-						
-								<td>无名女郎相关描述</td>
+                                <td>${product.pname}</td>
+                                <td>${product.category.cname}</td>
+                                <td>${product.price}</td>
+                                <td>${product.author}</td>
+                                <td>${product.description}</td>
                                 <td>
-                                    <a href="/department/to_update?sn=10001">编辑</a>
-                                    <a href="/department/remove?sn=10001">删除</a>
+                                    <a href="${pageContext.request.contextPath}/ProductServlet?method=edit&pid=${product.pid}">编辑</a>
+                                    <a href="${pageContext.request.contextPath}/ProductServlet?method=delete&pid=${product.pid}">删除</a>
                                 </td>
                             </tr>
+                        </c:forEach>
+
 							
                         </tbody>
                     </table>

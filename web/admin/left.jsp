@@ -13,17 +13,17 @@
                     </a>
                     <ul class="nav sub-nav">
                         <li>
-                            <a href="product_list.jsp">
+                            <a href="${pageContext.request.contextPath}/ProductServlet?method=findAll">
                                 <span class="glyphicon glyphicon-calendar"></span> 商品列表 </a>
                         </li>
                         <li>
-                            <a href="product_add.jsp">
+                            <a href="${pageContext.request.contextPath}/ProductServlet?method=saveUI">
                                 <span class="glyphicon glyphicon-check"></span> 添加商品 </a>
                         </li>
-						<li>
-                            <a href="product_update.jsp">
+						<!--li>
+                            <a href="/admin/product_update.jsp">
                                 <span class="glyphicon glyphicon-check"></span> 修改商品 </a>
-                        </li>
+                        </li-->
                     </ul>
                 </li>
 				<li>
@@ -41,10 +41,10 @@
                             <a href="${pageContext.request.contextPath }/CategoryServlet?method=saveUI">
                                 <span class="glyphicon glyphicon-check"></span> 添加分类 </a>
                         </li>
-						<li>
+						<!--li>
                             <a href="${pageContext.request.contextPath }/CategoryServlet?method=updateUI">
                                 <span class="glyphicon glyphicon-check"></span> 修改列表 </a>
-                        </li>
+                        </li-->
                     </ul>
                 </li>
             </ul>

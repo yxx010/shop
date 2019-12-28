@@ -69,7 +69,7 @@ public class UploadUtils {
 						// 获得文件上传的路径:
 						String path = request.getServletContext().getRealPath("/upload");
 						// 将输入流对接到输出流就可以了:
-						url = path+"\\"+uuidFileName;
+						url = path+"/"+uuidFileName;
 						OutputStream os = new FileOutputStream(url);
 						int len = 0;
 						byte[] b = new byte[1024];

@@ -1,7 +1,6 @@
 package com.imooc.domain;
 
 import lombok.Data;
-
 @Data
 public class Product {
     private Integer pid;
@@ -11,5 +10,5 @@ public class Product {
     private String description;
     private String filename;
     private String path;
-    private Integer cid;
+    private Category category=new Category();
 }

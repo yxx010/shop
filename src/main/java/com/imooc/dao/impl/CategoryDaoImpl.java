@@ -7,6 +7,7 @@ import com.imooc.utils.JDBCUtils;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -124,5 +125,27 @@ public class CategoryDaoImpl implements CategoryDao {
         }finally {
             JDBCUtils.release(preparedStatement,connection);
         }
+    }
+
+    @Override
+    public void delete(Connection connection, Integer cid) {
+        PreparedStatement preparedStatement=null;
+        try{
+            String sql="delete from category where cid=?";
+            preparedStatement=connection.prepareStatement(sql);
+            preparedStatement.setInt(1,cid);
+            preparedStatement.executeUpdate();
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            if(preparedStatement!=null){
+                try {
+                    preparedStatement.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
     }
 }

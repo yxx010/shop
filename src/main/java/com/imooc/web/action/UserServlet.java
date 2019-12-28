@@ -23,8 +23,7 @@ public class UserServlet extends HttpServlet {
         //判断
         if("login".equals(methodName)){
             login(request,response);
-        }
-        if("logout".equals(methodName)){
+        }else if("logout".equals(methodName)){
             logout(request,response);
         }
     }
