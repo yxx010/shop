@@ -51,7 +51,7 @@
                             </div>
                             <div class="col-md-6">
                                 <label for="sn" class="field">
-                                    <input id="cname" name="cname" class="gui-input" placeholder="名称" type="text" value="${category.cname}"/>
+                                    <input id="cname" name="cname" class="gui-input" placeholder="请输入分类名称" type="text" value="${category.cname}"/>
                                 </label>
                             </div>
                         </div>
@@ -67,7 +67,7 @@
                             </div>
 							<div class="col-md-6">
 								<label for="address" class="field">
-									<input id="cdesc" name="cdesc" class="gui-input" placeholder="描述" type="text" value="${category.cdesc}"/>
+									<input id="cdesc" name="cdesc" class="gui-input" placeholder="请输入分类描述" type="text" value="${category.cdesc}"/>
 								</label>
 							</div>
                         </div>

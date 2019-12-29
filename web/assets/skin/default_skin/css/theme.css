@@ -14114,7 +14114,7 @@ i.field-icon-right {
 }
 /* Mildly styles a font awesome based icon group
  * used in occasionaly in panel heading. Look at 
- * message widget on index.html for example */
+ * message widget on index.jsp for example */
 .mini-action-icons .fa {
   position: relative;
   top: 2px;

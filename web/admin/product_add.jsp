@@ -55,7 +55,7 @@
                             </div>
                             <div class="col-md-6">
                                 <label for="pname" class="field">
-                                    <input id="pname" name="pname" class="gui-input" placeholder="请输入名称" type="text" value=""/>
+                                    <input id="pname" name="pname" class="gui-input" placeholder="请输入商品名称" type="text" value=""/>
                                 </label>
                             </div>
                         </div>
@@ -70,7 +70,7 @@
                             </div>
                             <div class="col-md-6">
                                 <label for="price" class="field">
-                                    <input id="price" name="price" class="gui-input" placeholder="请输入价格" type="text" value=""/>
+                                    <input id="price" name="price" class="gui-input" placeholder="请输入商品价格" type="text" value=""/>
                                     
                                 </label>
                             </div>
@@ -136,7 +136,7 @@
                             </div>
 							<div class="col-md-6">
 								<label for="description" class="field">
-									<input id="description" name="description" class="gui-input" placeholder="请输入描述信息" type="text" value=""/>
+									<input id="description" name="description" class="gui-input" placeholder="请输入商品描述" type="text" value=""/>
 								</label>
 							</div>
                         </div>

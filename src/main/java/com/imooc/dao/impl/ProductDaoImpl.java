@@ -206,4 +206,59 @@ public class ProductDaoImpl implements ProductDao {
             }
         }
     }
+
+    @Override
+    public int findCount() {
+        Connection connection=null;
+        PreparedStatement preparedStatement=null;
+        ResultSet resultSet=null;
+        Long count=0l;
+        try{
+            connection=JDBCUtils.getConnection();
+            String sql="select count(*) as count from product";
+            preparedStatement=connection.prepareStatement(sql);
+            resultSet=preparedStatement.executeQuery();
+            if(resultSet.next()){
+                count=resultSet.getLong("count");
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            JDBCUtils.release(resultSet,preparedStatement,connection);
+        }
+        return count.intValue();
+    }
+
+    @Override
+    public List<Product> findByPage(int begin, int limit) {
+        Connection connection=null;
+        PreparedStatement preparedStatement=null;
+        ResultSet resultSet=null;
+        List<Product> list=null;
+        try {
+            connection=JDBCUtils.getConnection();
+            String sql="select * from product limit ?,?";
+            preparedStatement=connection.prepareStatement(sql);
+            preparedStatement.setInt(1,begin);
+            preparedStatement.setInt(2,limit);
+            resultSet=preparedStatement.executeQuery();
+            list=new ArrayList<>();
+            while (resultSet.next()){
+                Product product=new Product();
+                product.setPid(resultSet.getInt("pid"));
+                product.setPname(resultSet.getString("pname"));
+                product.setAuthor(resultSet.getString("author"));
+                product.setPrice(resultSet.getDouble("price"));
+                product.setDescription(resultSet.getString("description"));
+                product.setFilename(resultSet.getString("filename"));
+                product.setPath(resultSet.getString("path"));
+                list.add(product);
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            JDBCUtils.release(resultSet,preparedStatement,connection);
+        }
+        return list;
+    }
 }
